@@ -45,7 +45,7 @@ module Mixpanel
     end
 
     def clear_queue
-      @env["mixpanel_events"] = []
+      @env["mixpanel_events"] = [] if @env.has_key?("mixpanel_events")
     end
 
     class <<self
